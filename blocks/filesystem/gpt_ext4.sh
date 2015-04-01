@@ -32,7 +32,7 @@ sgdisk -Z ${INSTALL_DRIVE} # zap all on disk
 sgdisk -a 2048 -o ${INSTALL_DRIVE} # new gpt disk 2048 alignment
 
 # create partitions
-sgdisk -n ${PARTITION_EFI_BOOT}:0:+200M ${INSTALL_DRIVE} # (UEFI BOOT), default start block, 200MB
+sgdisk -n ${PARTITION_EFI_BOOT}:0:+512M ${INSTALL_DRIVE} # (UEFI BOOT), default start block, 200MB
 #sgdisk -n ${PARTITION_SWAP}:0:+2G ${INSTALL_DRIVE} # (SWAP), default start block, 2GB
 sgdisk -n ${PARTITION_ROOT}:0:+50G ${INSTALL_DRIVE}   # (LUKS), default start, remaining space
 sgdisk -n ${PARTITION_HOME}:0:0 ${INSTALL_DRIVE}   # (LUKS), default start, remaining space
